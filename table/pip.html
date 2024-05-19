@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="message">Hey</div>
+    <form class="login">
+        <input type="text" placeholder="Username">
+        <input type="password" placeholder="Password">
+        <button id="bt1">Login</button>
+    </form>
+
+    <a href="#" target="_blank">check my other pens</a>
+</body>
+<script>
+    document.getElementById("bt1").addEventListener("click", function () {
+        // Show the message div when the button is clicked
+        document.getElementById("message").style.display = "block";
+
+        // Hide the message div after 3 seconds
+        setTimeout(function () {
+            document.getElementById("message").style.display = "none";
+        }, 5000); // 3000 milliseconds = 3 seconds
+    });
+</script>
+
+</html>

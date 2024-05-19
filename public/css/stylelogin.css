@@ -1,0 +1,28 @@
+/* Add your custom styles here */
+.bg-image {
+    /* Add the background image URL here */
+    background-image: url('https://img.freepik.com/free-photo/coffee-cup-with-coffee-beans-chocolate-cookies-with-copy-space_176474-527.jpg?w=900&t=st=1708947384~exp=1708947984~hmac=7d2f9df60c59abbf25015b1e58f1e55ebd5e713c7825fda873057e49f0834d97');
+    /* Set background size */
+    background-size: cover;
+    /* Set background position */
+    background-position: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+}
+
+.hh {
+    height: 360px;
+}
+
+.fm {
+    margin-top: 150px;
+}
+
+.mask {
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Adjust opacity as needed */
+}
+
+body {
+    background-color: #3b3b3b1c;
+    /* Set your desired background color */
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Form</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <form id="productForm" action="" method="POST">
+        <label for="productCode">Product Code</label>
+        <input type="text" id="productCode" name="productCode" placeholder="Enter the product code">
+        <input type="number" id="code" name="code">
+        <br /><br />
+        <label for="productName">Product Name</label>
+        <input type="text" id="productName" name="productName" placeholder="Enter the product name">
+        <br /><br />
+        <label for="description">Description</label>
+        <textarea id="description" name="description" rows="2"
+            placeholder="Enter the description for your product"></textarea>
+        <br /><br />
+        <label for="quantity">QuantityOnHand</label>
+        <input type="number" id="quantityOnHand" name="quantity" min="1" placeholder="Quantity On hand">
+        <br /><br />
+        <label for="DesiredQuantity">DesiredQuantity</label>
+        <input type="number" id="DesiredQuantity" name="DesiredQuantity" min="0" step="1"
+            placeholder="Enter the quantity desired">
+        <br /><br />
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" min="0" step="0.01" placeholder="Enter the price">
+        <br /><br />
+        <button type="button" name="add" onclick="addProduct()">Add</button>
+        <button type="button" name="update">Update</button>
+    </form>
+
+    <table id="productTable">
+        <thead>
+            <tr>
+                <th>ProductID</th>
+                <th>ProductName</th>
+                <th>ProductPrice</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <script>
+        function addProduct() {
+            // Get form values
+            var productCode = document.getElementById('productCode').value;
+            var productName = document.getElementById('productName').value;
+            var quantity = document.getElementById('DesiredQuantity').value;
+            var price = document.getElementById('price').value;
+
+            // Check if all fields are filled
+            if (productCode && productName && quantity && price) {
+                var table = document.getElementById('productTable').getElementsByTagName('tbody')[0];
+
+                // Create a new row
+                var newRow = table.insertRow(table.rows.length);
+
+                // Insert cells into the new row
+                var cell1 = newRow.insertCell(0);
+                var cell2 = newRow.insertCell(1);
+                var cell3 = newRow.insertCell(2);
+                var cell4 = newRow.insertCell(3);
+
+                // Assign values to cells
+                cell1.innerHTML = productCode;
+                cell2.innerHTML = productName;
+                cell3.innerHTML = price;
+                cell4.innerHTML = quantity;
+
+                // Clear form fields
+                document.getElementById('productCode').value = '';
+                document.getElementById('productName').value = '';
+                document.getElementById('DesiredQuantity').value = '';
+                document.getElementById('price').value = '';
+            } else {
+                alert('Please fill all fields');
+            }
+        }
+    </script>
+</body>
+
+</html>
